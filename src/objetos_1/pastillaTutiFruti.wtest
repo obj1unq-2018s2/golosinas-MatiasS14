@@ -1,0 +1,29 @@
+import golosinas.*
+
+describe "test de pastilla tutifruti" {
+
+	test "peso inicial" {
+		assert.equals(5, tuttifrutti.peso())
+	}
+	
+	test "precio sin gluten" {
+		tuttifrutti.libreGluten(true)
+		assert.equals(7, tuttifrutti.precio())
+	}
+	
+		test "precio con gluten" {
+		tuttifrutti.libreGluten(false)
+		assert.equals(10, tuttifrutti.precio())
+	}
+	
+	test "mordiscos" {
+		tuttifrutti.mordisco()
+		assert.equals("chocolate", tuttifrutti.saborActual())
+		tuttifrutti.mordisco()
+		assert.equals("naranja", tuttifrutti.saborActual())
+		tuttifrutti.mordisco() //mordida en la que voveria a sabor frutilla
+		assert.equals("frutilla", tuttifrutti.saborActual())
+	}
+
+	
+}
