@@ -1,28 +1,30 @@
 import golosinas.*
 
 describe "test de pastilla tutifruti" {
+	
+	var golosina= new Tuttifrutti()
 
 	test "peso inicial" {
-		assert.equals(5, tuttifrutti.peso())
+		assert.equals(5, golosina.peso())
 	}
 	
 	test "precio sin gluten" {
-		tuttifrutti.libreGluten(true)
-		assert.equals(7, tuttifrutti.precio())
+		golosina.libreGluten(true)
+		assert.equals(7, golosina.precio())
 	}
 	
 		test "precio con gluten" {
-		tuttifrutti.libreGluten(false)
-		assert.equals(10, tuttifrutti.precio())
+		golosina.libreGluten(false)
+		assert.equals(10, golosina.precio())
 	}
 	
 	test "mordiscos" {
-		tuttifrutti.mordisco()
-		assert.equals("chocolate", tuttifrutti.saborActual())
-		tuttifrutti.mordisco()
-		assert.equals("naranja", tuttifrutti.saborActual())
-		tuttifrutti.mordisco() //mordida en la que voveria a sabor frutilla
-		assert.equals("frutilla", tuttifrutti.saborActual())
+		golosina.mordisco()
+		assert.equals("chocolate", golosina.saborActual())
+		golosina.mordisco()
+		assert.equals("naranja", golosina.saborActual())
+		golosina.mordisco() //mordida en la que voveria a sabor frutilla
+		assert.equals("frutilla", golosina.saborActual())
 	}
 
 	
