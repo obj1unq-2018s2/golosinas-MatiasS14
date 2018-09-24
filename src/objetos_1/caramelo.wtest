@@ -2,27 +2,29 @@ import golosinas.*
 
 describe "test de caramelo" {
 
+	var golosina= new Caramelo()
+
 	test "peso inicial" {
-		assert.equals(5, caramelo.peso())
+		assert.equals(5, golosina.peso())
 	}
 	
 	test "precio" {
-		assert.equals(1, caramelo.precio())
+		assert.equals(1, golosina.precio())
 	}
 	
 	test "mordiscos" {
-		caramelo.mordisco()
-		assert.equals(4, caramelo.peso())
-		caramelo.mordisco()
-		assert.equals(3, caramelo.peso())
+		golosina.mordisco()
+		assert.equals(4, golosina.peso())
+		golosina.mordisco()
+		assert.equals(3, golosina.peso())
 	}
 	
 	test "gusto" {
-		assert.equals("frutilla", caramelo.gusto())
+		assert.equals("frutilla", golosina.gusto())
 	}
 	
 	test "libre de gluten" {
-		assert.that(caramelo.libreGluten())	
+		assert.that(golosina.libreGluten())	
 	}
 	
 }

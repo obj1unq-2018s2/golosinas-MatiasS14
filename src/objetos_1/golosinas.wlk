@@ -1,4 +1,4 @@
-object bombon {
+class Bombon {
 	var peso = 15
 	
 	method precio() { return 5 }
@@ -12,7 +12,7 @@ object bombon {
 	method libreGluten() { return true }
 }
 
-object alfajor {
+class Alfajor {
 	var peso=300
 	
 	method precio() { return 12 }
@@ -26,7 +26,7 @@ object alfajor {
 	method libreGluten() { return false }
 }
 
-object caramelo {
+class Caramelo {
 	var peso=5
 	
 	method precio() { return 1 }
@@ -137,17 +137,11 @@ object tuttifrutti {
 	
 	method mordisco(){
 		
-		if(saborActual="frutilla"){
-			saborActual= sabores.get(1)
-		}
-		
-		else {
+		if(saborActual ==sabores.head() ){
+			sabores.remove(saborActual)
+			sabores.add(saborActual)
+			saborActual= sabores.head()
 			
-			if(saborActual="chocolate"){
-				saborActual= sabores.get(2)
-			}
-			
-			else{ saborActual= sabores.get(0)}
 		}
 	}
 }
