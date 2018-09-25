@@ -1,4 +1,4 @@
-object bombon {
+class Bombon {
 	var peso = 15
 	
 	method precio() { return 5 }
@@ -12,7 +12,7 @@ object bombon {
 	method libreGluten() { return true }
 }
 
-object alfajor {
+class Alfajor {
 	var peso=300
 	
 	method precio() { return 12 }
@@ -26,7 +26,7 @@ object alfajor {
 	method libreGluten() { return false }
 }
 
-object caramelo {
+class Caramelo {
 	var peso=5
 	
 	method precio() { return 1 }
@@ -40,7 +40,7 @@ object caramelo {
 	method libreGluten() { return true }
 }
 
-object chupetin {
+class Chupetin {
 	var peso=7
 	
 	method precio() { return 2 }
@@ -59,7 +59,7 @@ object chupetin {
 	method libreGluten() { return true }
 }
 
-object oblea {
+class Oblea {
 	var peso=250
 	
 	method precio() { return 5 }
@@ -79,7 +79,7 @@ object oblea {
 	method libreGluten() { return false }
 }
 
-object chocolatin {
+class Chocolatin {
 	// hay que acordarse de *dos* cosas, el peso inicial y el peso actual
 	// el precio se calcula a partir del precio inicial
 	// el mordisco afecta al peso actual
@@ -103,7 +103,7 @@ object chocolatin {
 	method libreGluten(){return false}
 }
 
-object golosinaBaniada {
+class GolosinaBaniada {
 	var golosinaInterior
 	var pesoBanio = 4
 	
@@ -123,32 +123,29 @@ object golosinaBaniada {
 	method libreGluten() {return golosinaInterior.libreGluten()}	
 }
 
-object tuttifrutti {
+class Tuttifrutti {
 	var property libreGluten
-	var sabores= ["frutilla","chocolate","naranja"]
-	var saborActual= "frutilla"
-	method peso(){return 5}
+	var gustos= ["frutilla","chocolate","naranja"]
+	var gustoActual= "frutilla"
+	var peso=5
+	
+	method peso(){return peso}
 	
 	method precio(){
 		return if(libreGluten) {7} else{10}
 	}
 	
-	method saborActual(){return saborActual}
+	method gusto(){return gustoActual}
 	
 	method mordisco(){
-		
-		if(saborActual="frutilla"){
-			saborActual= sabores.get(1)
-		}
-		
-		else {
-			
-			if(saborActual="chocolate"){
-				saborActual= sabores.get(2)
-			}
-			
-			else{ saborActual= sabores.get(0)}
-		}
-	}
+ 		
+ 		if(gustoActual ==gustos.head() ){
+ 			gustos.remove(gustoActual)
+ 			gustos.add(gustoActual)
+ 			gustoActual= gustos.head()
+ 			peso-=1
+ 			
+ 		}
+ 	}
 }
 

@@ -35,5 +35,11 @@ object mariano {
 	method gustosFaltantes(gustosDeseados){
 		return gustosDeseados.filter{gusto=> not self.sabores().contains(gusto) }
 	}
+	
+	method baniar(unaGolosina){
+		var golosinaBaniada= new GolosinaBaniada()
+		golosinaBaniada.baniaA(unaGolosina)
+		bolsaDeGolosinas.add(golosinaBaniada)
+	}
 }
 

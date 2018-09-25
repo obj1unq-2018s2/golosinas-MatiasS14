@@ -1,30 +1,32 @@
 import golosinas.*
 
 describe "test de oblea" {
+	
+	var golosina= new Oblea()
 
 	test "peso inicial" {
-		assert.equals(250, oblea.peso())
+		assert.equals(250, golosina.peso())
 	}
 	
 	test "precio" {
-		assert.equals(5, oblea.precio())
+		assert.equals(5, golosina.precio())
 	}
 	
 	test "mordiscos" {
-		oblea.mordisco()
-		assert.equals(125, oblea.peso())
-		oblea.mordisco()
-		assert.equals(62.5, oblea.peso())
-		oblea.mordisco() //mordida en la que descuenta el 25 por ciento
-		assert.equals(15.652, oblea.peso())
+		golosina.mordisco()
+		assert.equals(125, golosina.peso())
+		golosina.mordisco()
+		assert.equals(62.5, golosina.peso())
+		golosina.mordisco() //mordida en la que descuenta el 25 por ciento
+		assert.equals(15.625, golosina.peso())
 	}
 	
 	test "gusto" {
-		assert.equals("vainilla", oblea.gusto())
+		assert.equals("vainilla", golosina.gusto())
 	}
 	
 	test "libre de gluten" {
-		assert.that(not oblea.libreGluten())	
+		assert.that(not golosina.libreGluten())	
 	}
 	
 }

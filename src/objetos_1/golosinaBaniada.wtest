@@ -1,0 +1,48 @@
+import golosinas.*
+// TEST HECHO POST ENTREGA DIRECTAMENTE CON CLASES
+describe "test de golosinas bañadas"{
+	var golosinaBaniada= new GolosinaBaniada()
+	var tuttifrutti= new Tuttifrutti(libreGluten=true)
+	var chocolatin= new Chocolatin()
+	var chupetin= new Chupetin()
+	
+  test "pastilla tuttifrutti bañada" {
+  	
+	  golosinaBaniada.baniaA(tuttifrutti)
+	  assert.equals(true , golosinaBaniada.libreGluten())
+	  assert.that(9 == golosinaBaniada.precio())
+	  assert.that("frutilla" == golosinaBaniada.gusto())
+	  assert.equals(9,golosinaBaniada.peso())
+	  golosinaBaniada.mordisco()//primer mordisco cambia de sabor la pastilla y disminulle el baño
+	  assert.that("chocolate" == golosinaBaniada.gusto())
+	  assert.equals(6,golosinaBaniada.peso())
+	  golosinaBaniada.mordisco()//segundo mordisco cambia de sabor y se termina de consumir el baño
+	  assert.that("naranja" == golosinaBaniada.gusto())
+	  assert.equals(3,golosinaBaniada.peso())
+	  golosinaBaniada.mordisco()//tercer mordisco cambia de sabor la pastilla disminuye su peso
+	  assert.that("frutilla" == golosinaBaniada.gusto())
+	  assert.equals(2,golosinaBaniada.peso())
+  }
+
+  test "chocolatin bañado"{
+  	  chocolatin.pesoInicial(300)
+  	  golosinaBaniada.baniaA(chocolatin)
+  	  assert.that(304==golosinaBaniada.peso())
+  	  assert.equals(152, golosinaBaniada.precio())
+  	  golosinaBaniada.mordisco()
+  	  assert.equals(300,golosinaBaniada.peso())  	  
+  }
+
+  test "chupetin bañado"{
+  	  golosinaBaniada.baniaA(chupetin)
+  	  assert.equals(11,golosinaBaniada.peso())
+  	  golosinaBaniada.mordisco()
+  	  assert.equals(4.8)
+  	  golosinaBaniada.mordisco()
+  	  assert.equals(1.12)
+  }
+
+
+
+
+}

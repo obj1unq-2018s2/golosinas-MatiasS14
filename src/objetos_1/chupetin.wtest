@@ -1,28 +1,30 @@
 import golosinas.*
 
 describe "test de chupetin" {
+	
+	var golosina= new Chupetin()
 
 	test "peso inicial" {
-		assert.equals(7, chupetin.peso())
+		assert.equals(7, golosina.peso())
 	}
 	
 	test "precio" {
-		assert.equals(2, chupetin.precio())
+		assert.equals(2, golosina.precio())
 	}
 	
 	test "mordiscos" {
-		chupetin.mordisco()
-		assert.equals(2.8, chupetin.peso())
-		chupetin.mordisco()
-		assert.equals(1.12, chupetin.peso())
+		golosina.mordisco()
+		assert.equals(2.8, golosina.peso())
+		golosina.mordisco()
+		assert.equals(1.12, golosina.peso())
 	}
 	
 	test "gusto" {
-		assert.equals("naranja", chupetin.gusto())
+		assert.equals("naranja", golosina.gusto())
 	}
 	
 	test "libre de gluten" {
-		assert.that(chupetin.libreGluten())	
+		assert.that(golosina.libreGluten())	
 	}
 	
 }
